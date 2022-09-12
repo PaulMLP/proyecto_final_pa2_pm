@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<title>Actualizar Cliente</title>
+</head>
+
+<style>
+	body {
+		font-family: Segoe UI;
+		font-size: 17px;
+		padding: 8px;
+		background-color: #FCFFD4;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.row {
+		display: -ms-flexbox;
+		/* IE10 */
+		display: flex;
+		-ms-flex-wrap: wrap;
+		/* IE10 */
+		flex-wrap: wrap;
+		margin: 0 -16px;
+	}
+
+	.col-25 {
+		-ms-flex: 25%;
+		/* IE10 */
+		flex: 25%;
+	}
+
+	.col-50 {
+		-ms-flex: 50%;
+		/* IE10 */
+		flex: 50%;
+	}
+
+	.col-75 {
+		-ms-flex: 75%;
+		/* IE10 */
+		flex: 75%;
+	}
+
+	.col-25,
+	.col-50,
+	.col-75 {
+		padding: 0 16px;
+	}
+
+	.container {
+		background-color: #f2f2f2;
+		padding: 5px 20px 15px 20px;
+		border: 3px solid black;
+		border-radius: 10px;
+		position: absolute;
+		bottom: 15%;
+		right: 100px
+	}
+
+	input[type=text] {
+		width: 100%;
+		margin-bottom: 20px;
+		padding: 12px;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+	}
+
+	label {
+		margin-bottom: 10px;
+		display: block;
+	}
+
+	.icon-container {
+		margin-bottom: 20px;
+		padding: 7px 0;
+		font-size: 24px;
+	}
+
+	.btn {
+		background-color: rgb(121, 251, 160);
+		color: black;
+		padding: 12px;
+		margin: 10px 0;
+		border: none;
+		width: 60%;
+		border-radius: 10px;
+		cursor: pointer;
+		font-size: 20px;
+	}
+
+	.btn:hover {
+		background-color: #AB28BF;
+	}
+
+	a {
+		color: #2196F3;
+	}
+
+	hr {
+		border: 1px solid lightgrey;
+	}
+
+	span.price {
+		float: right;
+		color: grey;
+	}
+
+	/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+	@media (max-width: 800px) {
+		.row {
+			flex-direction: column-reverse;
+		}
+
+		.col-25 {
+			margin-bottom: 20px;
+		}
+	}
+</style>
+
+<body>
+	<div class="row">
+		<div class="col-75">
+			<div class="container">
+				<h2>
+					<center>
+						<font color="orange"> EDITAR INFORMACIÓN CLIENTE </font>
+					</center>
+				</h2><br>
+				<form action="#" th:action="@{/empleados/actualizarCliente}" th:object="${cliente}" th:method="GET">
+					<div class="row">
+						<div class="col-50">
+							<label>
+								<font color="#2C7AD4" face="Segoe UI" size="5"> <b>Cédula</b> </font>
+							</label>
+							<input type="text" id="genero" required="true" name="cedula" th:field="*{cedula}"
+								placeholder="Ingrese cedula...">
+							<label>
+								<font color="#2C7AD4" face="Segoe UI" size="5"> <b> Nombre </b> </font>
+							</label>
+							<input type="text" id="nombre" required="true" name="nombre" th:field="*{nombre}"
+								placeholder="Ingrese nombre...">
+							<label>
+								<font color="#2C7AD4" face="Segoe UI" size="5"> <b> Apellido </b></font>
+							</label>
+							<input type="text" id="apellido" required="true" name="genero" th:field="*{apellido}"
+								placeholder="Ingrese apellido...">
+						</div>
+						<div class="col-50">
+							<label>
+								<font color="#2C7AD4" face="Segoe UI" size="5"> <b> Fecha Nacimiento </b></font>
+							</label>
+							<input type="text" id="fechaNacimiento" required="true" name="genero" th:field="*{fechaNacimiento}"
+								placeholder="Ingrese fecha...">
+							<label>
+								<font color="#2C7AD4" face="Segoe UI" size="5"> <b> Genero </b></font>
+							</label>
+							<input type="text" id="genero" required="true" name="genero" th:field="*{genero}"
+								placeholder="Ingrese genero...">
+							<label>
+								<font color="#2C7AD4" face="Segoe UI" size="5"> <b> Registro </b></font>
+							</label>
+							<input type="text" id="registro" required="true" name="genero" th:field="*{registro}"
+								placeholder="Ingrese registro...">
+						</div>
+					</div>
+					<center>
+						<input type="submit" value="ACTUALIZAR" class="btn">
+					</center>
+				</form>
+			</div>
+		</div>
+</body>
+
+</html>
